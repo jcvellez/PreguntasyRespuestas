@@ -25,6 +25,7 @@ export class AppComponent {
   }*/
   //texto= 'Hola a todos';
 
+  //Estamos probando
   listaEstudiantes: any[]= [
     { nombre:"Juank Velez", estado:"Promocionado" },
     { nombre:"Patricia Funes", estado:"Libre" },
