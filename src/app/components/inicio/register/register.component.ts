@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
       usuario: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(4)]],
       ConfirmPassword: ['']
-    },{} );  
+    },{validator: this.chekPassword} );  
   }
 
   //{ validator: this.chekPassword }
@@ -26,9 +26,9 @@ export class RegisterComponent implements OnInit {
   }
 
   chekPassword(group: FormGroup): any {
-    /*
-    const pass = group.controls.password.value;
-    const ConfirmPass= group.controls.ConfirmPassword.value;*/
+    
+    // const pass = group.controls.password.value;
+    // const ConfirmPass= group.controls.ConfirmPassword.value;
     const pass = group.controls['password'].value;
     const ConfirmPass = group.controls['ConfirmPassword'].value;
     console.log("PASSWORD",pass);
