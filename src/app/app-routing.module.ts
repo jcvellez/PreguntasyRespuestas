@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CambiarPasswordComponent } from './components/dashboard/cambiar-password/cambiar-password.component';
+import { CuestionariosComponent } from './components/dashboard/cuestionarios/cuestionarios.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { BienvenidaComponent } from './components/inicio/bienvenida/bienvenida.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/inicio/login/login.component';
@@ -7,10 +11,18 @@ import { RegisterComponent } from './components/inicio/register/register.compone
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: 'inicio', component: InicioComponent, children: [
+  {
+    path: 'inicio', component: InicioComponent, children: [
       { path: '', component: BienvenidaComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
+    ]
+  },
+  {
+    path: 'dashboard', component: DashboardComponent, children: [
+      { path: '', component: CuestionariosComponent },
+      { path: 'cambiarPassword', component: CambiarPasswordComponent },
+      { path: 'navbar', component: NavbarComponent },
     ]
   },
   { path: '**', redirectTo: '/bienvenidos', pathMatch: 'full' }
