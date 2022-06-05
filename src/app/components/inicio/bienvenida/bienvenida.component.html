@@ -2,7 +2,12 @@
     <div class="center">
         <p><strong>SISTEMA DE PREGUNTAS Y RESPUESTAS</strong></p>
         <hr>
-        <button class="btn btn primary btn-xl">PREGUNTAS</button>
+        <button class="btn btn primary btn-xl" type="submit">PREGUNTAS</button>
         <button class="btn btn primary btn-xl" routerLink="/inicio/login">INGRESAR</button>
     </div>
+    <form (ngSubmit)="showSuccess()">
+        <div class="form-group">
+            <button class="btn btn-primary mr-2 btn-login" type="submit">TOAST</button>
+        </div>
+    </form>
 </div>

@@ -14,6 +14,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CambiarPasswordComponent } from './components/dashboard/cambiar-password/cambiar-password.component';
 import { CuestionariosComponent } from './components/dashboard/cuestionarios/cuestionarios.component';
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,12 @@ import { NavbarComponent } from './components/dashboard/navbar/navbar.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-bottom-up'
+    }), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
